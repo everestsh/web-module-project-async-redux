@@ -1,10 +1,11 @@
-// import logo from './logo.svg';
+import DogBreedsList from './components/DogBreedsList'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>App Test</h1>
+      <h1>List of dog breeds</h1>
+      <DogBreedsList />
     </div>
   );
 }
