@@ -5,32 +5,33 @@ import {connect} from 'react-redux'
 
 import axios from 'axios';
 
-
-class DogBreedsList extends React.Component {
-
+import { fetchSuccess} from './../actions';
 
 
+const DogBreedsList = ({message, dispatch}) => {
 
-    render() {
-      console.log(Object.keys(this.props.message))
+
+
+
+    
+      console.log(Object.keys(message))
 
       const handleClick = () => {
-        // dispatch(fetchError("this causes an eror now"));
+        
         axios.get('https://dog.ceo/api/breeds/list/all')
         .then(resp=> {
           console.log(resp.data)
-          // dispatch(fetchSuccess(resp.data.results[0]));  
-          // dispatch(fetchError("jjdjjjdfnj"));
+          dispatch(fetchSuccess(resp.data));
         })
         .catch(err => {
-          // dispatch(fetchError(err));
+          
         });
       }
         return (
         <div className="App">
             <h1>{}</h1>
             {  
-              Object.keys(this.props.message).map( (breeds, key)=> (
+              Object.keys(message).map( (breeds, key)=> (
                   <p keyid={key}> {breeds}</p>
               ))
             }
@@ -39,7 +40,7 @@ class DogBreedsList extends React.Component {
             <button onClick={handleClick}>Update</button>
         </div>
         );
-    }
+    
 
   }
   const mapStateToProps = state =>{

@@ -1,5 +1,5 @@
 
-import { UPDATE_BREEDS } from '../actions';
+import { FETCH_SUCCESS } from '../actions';
 
     const initialState = {
         message: 
@@ -12,12 +12,13 @@ import { UPDATE_BREEDS } from '../actions';
     
       function reducer(state = initialState, action) {
         console.log("reducer ",state)
+        console.log("reducer  action == ",action.payloads)
         switch (action.type) {
-            case UPDATE_BREEDS:
-            return {
-                ...state,
-                title: action.payload
-            };
+            case(FETCH_SUCCESS):
+            return({
+              ...state,
+              message: action.payload,
+            });
                 default:
                 return state;
             }
