@@ -1,10 +1,10 @@
 # Module Project: Async Redux - React Redux App
 
-This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored asyncronous action creators in Redux. In your project you will demonstrate proficiency of these subjects and principles by building an app from scratch that consumes and API of your choosing, and displays data fetched from that API.
+This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored asynchronous action creators in Redux. In your project you will demonstrate proficiency of these subjects and principles by building an app from scratch that consumes and API of your choosing, and displays data fetched from that API.
 
 ## Introduction
 
-This is the chance to let your skills shine! You have learned _sooo_ much the last month, and now you get to put all of your hard-earned skills to work. Choose an open api ([this list](https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/) has a lot of great ones). Protip - don't take too long choosing an API. Pick one that looks interesting, and get building.
+This is the chance to let your skills shine! You have learned _sooo_ much the last month, and now you get to put all of your hard-earned skills to work. Choose an open api ([this list](https://github.com/public-apis/public-apis)). Protip - don't take too long choosing an API. Pick one that looks interesting, and get building.
 
 Once you have chosen an API to consume, build an app that makes sense for the data you will be retrieving. Have fun with this. You get to be the creative mind. You get to make all the decisions here. I'm excited to see what you build!
 
@@ -23,16 +23,8 @@ In this project you'll choose an api to consume. You will build an application f
 ### Task 1: Project Set Up
 
 - [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal.
-- [ ] CD into the project base directory `cd React-Redux-App`.
-- [ ] Run `npx create-react-app app --use-npm` to make a CRA app.
-- [ ] CD into the react app `cd app`.
 - [ ] Start up the app using `npm start`.
-- [ ] Install `axios`, `redux-thunk` and `redux-logger`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [ ] Add your code into teh `\src` folder.
 
 ### Task 2: Minimum Viable Product
 
@@ -42,9 +34,8 @@ In this project you'll choose an api to consume. You will build an application f
 - [ ] Display the data from the store in a component
 - [ ] _Some_ styling must be applied. It can be basic, but the app must not only use browser default stylings
 
-### Task 3: Stretch Problems
-
-Take the app as far as you can go! Styling, redux hooks, another API, an input to fetch data dynamically, etc. Work on it, improve it until the end of the day. If you find yourself finishing with time left to spare, jump on with your TL or fellow student to ask them what feature they think you should build next. Good luck!
-
-## Submission Format
-* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+### Submission Format
+- [ ] If this is your first time connecting a submission, authorize your github account within the codegrade assignment.
+- [ ] Connect your fork to Codegrade using the "Connect Git" button.
+- [ ] Find your newly created fork from the list and push your work to main.
+- [ ] Check this video for details: www.youtube.com/watch?v=fC2BO7dI6IQ
