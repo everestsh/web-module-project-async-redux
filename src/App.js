@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import GifList from "./components/GifList"
 import GifForm from "./components/GifForm"
 
-import { fetchStart , fetchSuccess} from './actions';
+import { fetchStart , fetchSuccess, getGifs} from './actions';
 import './App.css';
 import axios from 'axios';
 
@@ -12,7 +12,7 @@ function App(props) {
 
 
   // console.log("App props.loading", props.loading)
-  const {gifs, loading, error, fetchStart, fetchSuccess} = props
+  const {gifs, loading, error, fetchStart, fetchSuccess, getGifs} = props
 
   // if(error != ""){
   //   return <h3>{error}</h3>
@@ -20,15 +20,17 @@ function App(props) {
   // console.log("App props", props)
   useEffect(()=>{
     console.log("fetch start")
-    fetchStart()
-    axios.get(`https://api.giphy.com/v1/gifs/search?api_key=3g6nabgKJk22VyMEWQZNbE8d3hL5c6wL&q=cats`)
-      .then(res=>{
-        console.log("asios ",res.data.data)
-        fetchSuccess(res.data.data)
-      })
-      .catch(err=>{
-        console.log(err)
-      })
+    getGifs()
+    // fetchStart()
+    // axios.get(`https://api.giphy.com/v1/gifs/search?api_key=3g6nabgKJk22VyMEWQZNbE8d3hL5c6wL&q=cats`)
+    //   .then(res=>{
+    //     console.log("asios ",res.data.data)
+    //     fetchSuccess(res.data.data)
+    //   })
+    //   .catch(err=>{
+    //     console.log(err)
+
+    //   })
   },[])
   return (
     <div className="App">
@@ -58,6 +60,6 @@ const mapActionsToProps = () => {
     fetchStart: fetchStart
   }
 }
-export default connect(mapStateToProps, {fetchStart, fetchSuccess})(App);
+export default connect(mapStateToProps, {fetchStart, fetchSuccess, getGifs})(App);
 // export default connect(mapStateToProps, {fetchStart:fetchStart})(App);
 // export default connect(mapStateToProps, mapActionsToProps())(App);
