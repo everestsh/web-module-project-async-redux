@@ -15,7 +15,8 @@ function GifForm(props) {
     }
     const handleChange = (e) => {
         console.log(e.target.value)
-        setSearchItem(e.target.value)
+        // setSearchItem(e.target.value)
+        props.getGifs(e.target.value)
     }
   return (
     <div className="GifList">
