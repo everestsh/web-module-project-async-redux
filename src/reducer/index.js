@@ -7,8 +7,9 @@ import data from "../data/gifs"
 const initialState = {
     gifs: [],
     loading: false,
-    error: ''
-    // error: 'This is an error'
+    searchItem: '',
+    error: '',
+    // error: 'This is an error',
 }
 
 const reducer = (state = initialState , action) =>{

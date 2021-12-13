@@ -20,7 +20,9 @@ function App(props) {
   // console.log("App props", props)
   useEffect(()=>{
     console.log("fetch start")
-    getGifs()
+    // getGifs("dogs dance")
+    // getGifs("fridays")
+    getGifs("fall")
     // fetchStart()
     // axios.get(`https://api.giphy.com/v1/gifs/search?api_key=3g6nabgKJk22VyMEWQZNbE8d3hL5c6wL&q=cats`)
     //   .then(res=>{

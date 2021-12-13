@@ -18,7 +18,7 @@ export const fetchError = (errorMessage)=> {
     return({type: FETCH_ERROR, payload:errorMessage});
 }
 
-export const getGifs = () => {
+export const getGifs = (searchItem) => {
     return (dispatch) => {
         // dispatch({type: FETCH_START});
         // dispatch({type: FETCH_ERROR, payload:"Test error"});
@@ -27,7 +27,8 @@ export const getGifs = () => {
         // }, 2000)
 
         // dispatch({type: FETCH_START});
-        axios.get(`https://api.giphy.com/v1/gifs/search?api_key=3g6nabgKJk22VyMEWQZNbE8d3hL5c6wL&q=cats`)
+        dispatch(fetchStart())
+        axios.get(`https://api.giphy.com/v1/gifs/search?api_key=3g6nabgKJk22VyMEWQZNbE8d3hL5c6wL&q=${searchItem}`)
         .then(res=>{
           console.log("asios ",res.data.data)
         //   fetchSuccess(res.data.data)
