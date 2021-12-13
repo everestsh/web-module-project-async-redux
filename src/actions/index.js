@@ -8,8 +8,8 @@ export const fetchStart = () => {
 
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 
-export const fetchSuccess = (person)=> {
-    return({type: FETCH_SUCCESS, payload:person});
+export const fetchSuccess = (gifs)=> {
+    return({type: FETCH_SUCCESS, payload:gifs});
 }
 
 export const FETCH_ERROR = 'FETCH_ERROR';

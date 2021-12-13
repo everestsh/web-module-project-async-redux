@@ -21,7 +21,7 @@ function App(props) {
   useEffect(()=>{
     console.log("fetch start")
     fetchStart()
-    axios.get(`https://api.giphy.com/v1/gifs/search?api_key=3g6nabgKJk22VyMEWQZNbE8d3hL5c6wL&q=dogs`)
+    axios.get(`https://api.giphy.com/v1/gifs/search?api_key=3g6nabgKJk22VyMEWQZNbE8d3hL5c6wL&q=cats`)
       .then(res=>{
         console.log("asios ",res.data.data)
         fetchSuccess(res.data.data)
