@@ -18,4 +18,11 @@ function GifList(props) {
   );
 }
 
-export default GifList;
+const mapStateToProps = state => {
+  console.log("App currentState: ", state)
+  return {
+    gifs: state.gifs,
+  }
+}
+
+export default connect(mapStateToProps)(GifList); 

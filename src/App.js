@@ -26,7 +26,7 @@ function App(props) {
       <GifForm />
       {/* <h1>{props.gifd}</h1> */}
       {
-        loading ? <h3>We are loading</h3> : <GifList gifs={gifs} />
+        loading ? <h3>We are loading</h3> : <GifList />
       }
     </div>
   );
@@ -34,9 +34,9 @@ function App(props) {
 const mapStateToProps = state => {
   console.log("App currentState: ", state)
   return {
-    gifs: state.gifs,
+    // gifs: state.gifs,
     loading: state.loading,
-    error: state.error
+    // error: state.error
   }
 }
 export default connect(mapStateToProps)(App);
