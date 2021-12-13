@@ -4,22 +4,31 @@ import { connect } from 'react-redux';
 import GifList from "./components/GifList"
 import GifForm from "./components/GifForm"
 
-import { fetchStart } from './actions';
+import { fetchStart , fetchSuccess} from './actions';
 import './App.css';
+import axios from 'axios';
 
 function App(props) {
 
 
   // console.log("App props.loading", props.loading)
-  const {gifs, loading, error, fetchStart} = props
+  const {gifs, loading, error, fetchStart, fetchSuccess} = props
 
   // if(error != ""){
   //   return <h3>{error}</h3>
   // }
-  console.log("App props", props)
+  // console.log("App props", props)
   useEffect(()=>{
     console.log("fetch start")
-    props.fetchStart()
+    fetchStart()
+    axios.get(`https://api.giphy.com/v1/gifs/search?api_key=3g6nabgKJk22VyMEWQZNbE8d3hL5c6wL&q=dogs`)
+      .then(res=>{
+        console.log("asios ",res.data.data)
+        fetchSuccess(res.data.data)
+      })
+      .catch(err=>{
+        console.log(err)
+      })
   },[])
   return (
     <div className="App">
@@ -49,5 +58,6 @@ const mapActionsToProps = () => {
     fetchStart: fetchStart
   }
 }
+export default connect(mapStateToProps, {fetchStart, fetchSuccess})(App);
 // export default connect(mapStateToProps, {fetchStart:fetchStart})(App);
-export default connect(mapStateToProps, mapActionsToProps())(App);
+// export default connect(mapStateToProps, mapActionsToProps())(App);
