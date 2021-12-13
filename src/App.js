@@ -12,6 +12,7 @@ function App(props) {
   // const gifs = data
   // const loading = false
   // const error = "";
+  console.log("App props", props)
   return (
     <div className="App">
       <h1>Search for Gifs</h1>
@@ -31,7 +32,7 @@ function App(props) {
 const mapStateToProps = state => {
   console.log("App currentState: ", state)
   return {
-    gifd: state
+    gifd: state.gifd
   }
 }
 export default connect(mapStateToProps)(App);

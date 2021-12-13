@@ -1,14 +1,14 @@
 
 const initialState = {
-    gifd: [],
+    gifd: ["hello gifd"],
     loading: false,
     error: ''
 }
 
-const reducer = (state , action) =>{
+const reducer = (state = initialState , action) =>{
     switch(action.type) {
         default:
-            return "state"
+            return state
     }
 }
 
