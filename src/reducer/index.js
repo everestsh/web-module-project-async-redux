@@ -1,6 +1,8 @@
 
+import data from "../data/gifs"
+
 const initialState = {
-    gifd: ["hello gifd"],
+    gifs: data,
     loading: false,
     error: ''
 }

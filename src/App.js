@@ -5,7 +5,7 @@ import GifList from "./components/GifList"
 import GifForm from "./components/GifForm"
 
 // import {data} from "./data/gifs"
-import data from "./data/gifs"
+// import data from "./data/gifs"
 import './App.css';
 
 function App(props) {
@@ -13,6 +13,8 @@ function App(props) {
   // const loading = false
   // const error = "";
   console.log("App props", props)
+  console.log("App props.loading", props.loading)
+  const {gifs, loading, error} = props
   return (
     <div className="App">
       <h1>Search for Gifs</h1>
@@ -22,9 +24,9 @@ function App(props) {
         <button>Search</button>
       </form> */}
       <GifForm />
-      <h1>{props.gifd}</h1>
+      {/* <h1>{props.gifd}</h1> */}
       {
-        // loading ? <h3>We are loading</h3> : <GifList gifs={gifs} />
+        loading ? <h3>We are loading</h3> : <GifList gifs={gifs} />
       }
     </div>
   );
@@ -32,7 +34,9 @@ function App(props) {
 const mapStateToProps = state => {
   console.log("App currentState: ", state)
   return {
-    gifd: state.gifd
+    gifs: state.gifs,
+    loading: state.loading,
+    error: state.error
   }
 }
 export default connect(mapStateToProps)(App);
