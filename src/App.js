@@ -1,42 +1,53 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import GifList from "./components/GifList"
 import GifForm from "./components/GifForm"
 
-// import {data} from "./data/gifs"
-// import data from "./data/gifs"
+import { fetchStart } from './actions';
 import './App.css';
 
 function App(props) {
-  // const gifs = data
-  // const loading = false
-  // const error = "";
+
+
+  // console.log("App props.loading", props.loading)
+  const {gifs, loading, error, fetchStart} = props
+
+  // if(error != ""){
+  //   return <h3>{error}</h3>
+  // }
   console.log("App props", props)
-  console.log("App props.loading", props.loading)
-  const {gifs, loading, error} = props
+  useEffect(()=>{
+    console.log("fetch start")
+    props.fetchStart()
+  },[])
   return (
     <div className="App">
       <h1>Search for Gifs</h1>
 
-      {/* <form>
-        <input />
-        <button>Search</button>
-      </form> */}
       <GifForm />
-      {/* <h1>{props.gifd}</h1> */}
       {
-        loading ? <h3>We are loading</h3> : <GifList />
+        (error != "") && <h3 >{error}</h3>
+      }
+      {
+        loading ? <h3>We are loading ...</h3> : <GifList />
       }
     </div>
   );
 }
 const mapStateToProps = state => {
-  console.log("App currentState: ", state)
+  // console.log("App currentState: ", state)
   return {
     // gifs: state.gifs,
     loading: state.loading,
-    // error: state.error
+    error: state.error
   }
 }
-export default connect(mapStateToProps)(App);
+
+const mapActionsToProps = () => {
+  return {
+    fetchStart: fetchStart
+  }
+}
+// export default connect(mapStateToProps, {fetchStart:fetchStart})(App);
+export default connect(mapStateToProps, mapActionsToProps())(App);

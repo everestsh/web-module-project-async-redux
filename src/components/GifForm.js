@@ -7,7 +7,7 @@ function GifForm(props) {
     const {gifs} = props
     console.log("GifList", gifs)
   return (
-    <div className="App">
+    <div className="GifList">
       <form>
         <input />
         <button>Search</button>

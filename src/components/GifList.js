@@ -5,9 +5,9 @@ import Gif from "./Gif"
 
 function GifList(props) {
     const {gifs} = props
-    console.log("GifList", gifs)
+    // console.log("GifList", gifs)
   return (
-    <div className="App">
+    <div className="GifList">
       <h1>GifList</h1>
       {
         gifs.map( (gif, index) => (
@@ -19,7 +19,7 @@ function GifList(props) {
 }
 
 const mapStateToProps = state => {
-  console.log("App currentState: ", state)
+  // console.log("App currentState: ", state)
   return {
     gifs: state.gifs,
   }

@@ -7,7 +7,7 @@ function Gif(props) {
     const {gif} = props
  
   return (
-    <div className="App">
+    <div className="Gif">
       {/* <h1>GifList</h1> */}
         <h3>{gif.title}</h3>
         <p> {gif.username} </p>
